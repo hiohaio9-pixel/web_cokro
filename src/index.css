@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-display: 'Cormorant Garamond', serif;
+    --font-body: 'Montserrat', sans-serif;
+
+    --background: 40 33% 98%;
+    --foreground: 240 6% 10%;
+    --card: 40 33% 98%;
+    --card-foreground: 240 6% 10%;
+    --popover: 40 33% 98%;
+    --popover-foreground: 240 6% 10%;
+    --primary: 0 66% 33%;
+    --primary-foreground: 40 33% 98%;
+    --secondary: 36 30% 92%;
+    --secondary-foreground: 240 6% 10%;
+    --muted: 36 20% 93%;
+    --muted-foreground: 240 4% 40%;
+    --accent: 37 37% 56%;
+    --accent-foreground: 240 6% 10%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 36 20% 88%;
+    --input: 36 20% 88%;
+    --ring: 0 66% 33%;
+    --chart-1: 0 66% 33%;
+    --chart-2: 37 37% 56%;
+    --chart-3: 36 30% 72%;
+    --chart-4: 40 33% 85%;
+    --chart-5: 240 6% 10%;
+    --radius: 0.25rem;
+    --sidebar-background: 40 33% 96%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 0 66% 33%;
+    --sidebar-primary-foreground: 40 33% 98%;
+    --sidebar-accent: 36 30% 92%;
+    --sidebar-accent-foreground: 240 6% 10%;
+    --sidebar-border: 36 20% 88%;
+    --sidebar-ring: 0 66% 33%;
+  }
+
+  .dark {
+    --background: 240 6% 7%;
+    --foreground: 40 33% 95%;
+    --card: 240 6% 10%;
+    --card-foreground: 40 33% 95%;
+    --popover: 240 6% 10%;
+    --popover-foreground: 40 33% 95%;
+    --primary: 0 55% 45%;
+    --primary-foreground: 40 33% 98%;
+    --secondary: 240 4% 16%;
+    --secondary-foreground: 40 33% 95%;
+    --muted: 240 4% 16%;
+    --muted-foreground: 36 15% 60%;
+    --accent: 37 37% 50%;
+    --accent-foreground: 40 33% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 4% 18%;
+    --input: 240 4% 18%;
+    --ring: 0 55% 45%;
+    --chart-1: 0 55% 45%;
+    --chart-2: 37 37% 50%;
+    --chart-3: 36 30% 60%;
+    --chart-4: 40 33% 70%;
+    --chart-5: 40 33% 95%;
+    --sidebar-background: 240 6% 10%;
+    --sidebar-foreground: 40 33% 95%;
+    --sidebar-primary: 0 55% 45%;
+    --sidebar-primary-foreground: 40 33% 98%;
+    --sidebar-accent: 240 4% 16%;
+    --sidebar-accent-foreground: 40 33% 95%;
+    --sidebar-border: 240 4% 18%;
+    --sidebar-ring: 0 55% 45%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
