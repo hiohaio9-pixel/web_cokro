@@ -5,7 +5,7 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Button } from '@/components/ui/button';
 import { toast } from 'sonner';
-import { base44 } from '@/api/base44Client';
+
 
 export default function ContactSection() {
   const ref = useRef(null);
@@ -24,13 +24,24 @@ export default function ContactSection() {
       return;
     }
     setSending(true);
-    await base44.integrations.Core.SendEmail({
-      to: 'cokro.eshop@gmail.com',
-      subject: `Nová zpráva z webu od ${form.name}`,
-      body: `Jméno: ${form.name}\nEmail: ${form.email}\n\nZpráva:\n${form.message}`,
+    const res = await fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        access_key: '258d2a29-8e46-42c7-83ca-43652c3d6a7d',
+        name: form.name,
+        email: form.email,
+        message: form.message,
+        subject: `Nová zpráva z webu COKRO od ${form.name}`,
+      }),
     });
-    toast.success('Zpráva byla odeslána! Ozveme se vám co nejdříve.');
-    setForm({ name: '', email: '', message: '' });
+    const data = await res.json();
+    if (data.success) {
+      toast.success('Zpráva byla odeslána! Ozveme se vám co nejdříve.');
+      setForm({ name: '', email: '', message: '' });
+    } else {
+      toast.error('Nepodařilo se odeslat zprávu. Zkuste to prosím znovu.');
+    }
     setSending(false);
   };
 
