@@ -12,7 +12,7 @@ import Footer from '../components/cokro/Footer';
 import SevDivider from '../components/cokro/SevDivider';
 
 const IMAGES = {
-  hero: 'https://media.base44.com/images/public/69e3402c3325c2718601fe8c/ed89b2798_valasky_kroj_prace.png',
+  hero: 'https://media.base44.com/images/public/69e3402c3325c2718601fe8c/4a04cbc60_valasky_kroj_prace.png',
   about: 'https://media.base44.com/images/public/69e3402c3325c2718601fe8c/3e8a31404_IMG_24803.jpg',
   service: 'https://media.base44.com/images/public/69e3402c3325c2718601fe8c/f8b9c495d_generated_7dca0047.png',
   gallery: [

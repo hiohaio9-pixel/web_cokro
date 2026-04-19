@@ -5,6 +5,7 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Button } from '@/components/ui/button';
 import { toast } from 'sonner';
+import { base44 } from '@/api/base44Client';
 
 export default function ContactSection() {
   const ref = useRef(null);
@@ -23,8 +24,11 @@ export default function ContactSection() {
       return;
     }
     setSending(true);
-    // Simulate sending
-    await new Promise((r) => setTimeout(r, 1000));
+    await base44.integrations.Core.SendEmail({
+      to: 'cokro.eshop@gmail.com',
+      subject: `Nová zpráva z webu od ${form.name}`,
+      body: `Jméno: ${form.name}\nEmail: ${form.email}\n\nZpráva:\n${form.message}`,
+    });
     toast.success('Zpráva byla odeslána! Ozveme se vám co nejdříve.');
     setForm({ name: '', email: '', message: '' });
     setSending(false);

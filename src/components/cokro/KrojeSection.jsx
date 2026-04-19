@@ -10,7 +10,7 @@ const kroje = [
       popis: 'Mužský kyjovský kroj je charakteristický tmavou modrou vestou bohatě zdobenou barevnou výšivkou a zlatými knoflíky, bílou vyšívanou košilí s krajkovými manžetami, tmavými kalhotami s červenou výšivkou a vysokými černými holínkami.',
     },
     zena: {
-      img: 'https://media.base44.com/images/public/69e3402c3325c2718601fe8c/00e001be9_kyjovsky_zensky.png',
+      img: 'https://media.base44.com/images/public/69e3402c3325c2718601fe8c/c520efac2_kyjovsky_zensky.png',
       popis: 'Ženský kyjovský kroj tvoří bílý vyšívaný šátek s krajkou přes ramena, červený živůtek, černá sukně s bohatou barevnou květinovou výšivkou a červeným spodním lemem s krajkou. Doplňuje ho barevný věnec na hlavě.',
     },
   },
@@ -21,7 +21,7 @@ const kroje = [
       popis: 'Mužský vranovický kroj je charakteristický tmavou vestou s bohatou zlatou výšivkou a řadami zlatých knoflíků, bílou lněnou košilí, světlými vlněnými kalhotami a vysokými černými botami s lidovými výšivkami.',
     },
     zena: {
-      img: 'https://media.base44.com/images/public/69e3402c3325c2718601fe8c/05662b664_vranovice_damsky.png',
+      img: 'https://media.base44.com/images/public/69e3402c3325c2718601fe8c/b7eb6f8af_vranovice_damsky.png',
       popis: 'Ženský vranovický kroj se skládá z bílé blůzy s krajkovými manžetami, červeného vyšívaného živůtku se zlatými detaily, černé saténové sukně s červenými pruhy a bílé vzorované spodní sukně s krajkou.',
     },
   },
@@ -32,7 +32,7 @@ const kroje = [
       popis: 'Mužský valašský kroj se vyznačuje bílou lněnou košilí, červeným sametovým živůtkem s barevnými knoflíky a výšivkou, tmavými soukenými kalhotami a tradičními krpci.',
     },
     zena: {
-      img: 'https://media.base44.com/images/public/69e3402c3325c2718601fe8c/0180554e0_valasky_zensky.png',
+      img: 'https://media.base44.com/images/public/69e3402c3325c2718601fe8c/64c734453_valasky_zensky.png',
       popis: 'Ženský valašský kroj tvoří bílá vyšívaná blůza, tmavá sukně s barevnou tkanou zástěrou s geometrickými vzory a tmavý živůtek s lidovou výšivkou.',
     },
   },
