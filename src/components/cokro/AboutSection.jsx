@@ -22,6 +22,8 @@ export default function AboutSection({ aboutImage }) {
               <img
                 src={aboutImage}
                 alt="Práce v dílně COKRO"
+                loading="lazy"
+                decoding="async"
                 className="relative w-full aspect-[4/5] object-cover"
               />
             </div>

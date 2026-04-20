@@ -40,6 +40,8 @@ export default function ServicesSection() {
               <img
                 src="https://media.base44.com/images/public/69e3402c3325c2718601fe8c/ec45dc204_fotka_6.png"
                 alt="Tradiční kroj"
+                loading="lazy"
+                decoding="async"
                 className="relative w-full aspect-square object-cover"
               />
             </div>

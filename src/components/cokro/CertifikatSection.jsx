@@ -75,6 +75,8 @@ export default function CertifikatSection() {
               <img
                 src="https://media.base44.com/images/public/69e3402c3325c2718601fe8c/3ff161d41_IMG_24662.jpg"
                 alt="Jana Coufalová s certifikátem Brněnsko originální produkt"
+                loading="lazy"
+                decoding="async"
                 className="relative w-full aspect-[3/4] object-cover object-top"
               />
             </div>
