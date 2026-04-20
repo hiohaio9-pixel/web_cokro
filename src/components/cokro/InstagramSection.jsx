@@ -1,5 +1,5 @@
 import { motion, useInView } from 'framer-motion';
-import { useRef, useEffect } from 'react';
+import { useRef, useEffect, useState } from 'react';
 import { Instagram, Facebook } from 'lucide-react';
 
 const INSTAGRAM_URL = 'https://www.instagram.com/cokro_official/';
@@ -8,6 +8,18 @@ const FACEBOOK_URL = 'https://www.facebook.com/COKRO.original/';
 export default function InstagramSection() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-80px" });
+  const fbContainerRef = useRef(null);
+  const [fbWidth, setFbWidth] = useState(500);
+
+  useEffect(() => {
+    if (!fbContainerRef.current) return;
+    const observer = new ResizeObserver((entries) => {
+      const width = Math.floor(entries[0].contentRect.width);
+      setFbWidth(Math.min(Math.max(width, 280), 500));
+    });
+    observer.observe(fbContainerRef.current);
+    return () => observer.disconnect();
+  }, []);
 
   useEffect(() => {
     // Instagram embed
@@ -21,22 +33,12 @@ export default function InstagramSection() {
       document.body.appendChild(script);
     }
 
-    // Facebook SDK
-    if (window.FB) {
-      window.FB.XFBML.parse();
-    } else {
-      const script = document.createElement('script');
-      script.src = 'https://connect.facebook.net/cs_CZ/sdk.js#xfbml=1&version=v19.0';
-      script.async = true;
-      script.defer = true;
-      script.crossOrigin = 'anonymous';
-      document.body.appendChild(script);
-    }
+
   }, []);
 
   return (
     <section className="py-24 lg:py-36 bg-secondary/50">
-      <div id="fb-root" />
+
       <div ref={ref} className="max-w-7xl mx-auto px-6 lg:px-12 flex flex-col items-center">
         {/* Header */}
         <motion.div
@@ -99,18 +101,18 @@ export default function InstagramSection() {
             />
           </div>
 
-          {/* Facebook Page Plugin */}
-          <div className="w-full flex justify-center overflow-hidden">
-            <div
-              className="fb-page"
-              data-href={FACEBOOK_URL}
-              data-tabs="timeline"
-              data-width="500"
-              data-height="600"
-              data-small-header="false"
-              data-adapt-container-width="true"
-              data-hide-cover="false"
-              data-show-facepile="true"
+          {/* Facebook iframe embed */}
+          <div ref={fbContainerRef} className="w-full flex justify-center overflow-hidden">
+            <iframe
+              src={`https://www.facebook.com/plugins/page.php?href=${encodeURIComponent(FACEBOOK_URL)}&tabs=timeline&width=${fbWidth}&height=600&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId`}
+              width={fbWidth}
+              height="600"
+              style={{ border: 'none', overflow: 'hidden' }}
+              scrolling="no"
+              frameBorder="0"
+              allowFullScreen
+              allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+              title="Facebook COKRO"
             />
           </div>
         </motion.div>
