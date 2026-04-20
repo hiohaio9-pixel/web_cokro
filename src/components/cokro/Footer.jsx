@@ -1,4 +1,4 @@
-import { Instagram } from 'lucide-react';
+import { Instagram, Facebook } from 'lucide-react';
 
 export default function Footer() {
   return (
@@ -16,14 +16,24 @@ export default function Footer() {
           © {new Date().getFullYear()} COKRO — Tradice, která žije v každém stehu
         </p>
 
-        <a
-          href="https://www.instagram.com/cokro_official/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-background/40 hover:text-accent transition-colors duration-300"
-        >
-          <Instagram className="w-5 h-5" />
-        </a>
+        <div className="flex items-center gap-4">
+          <a
+            href="https://www.instagram.com/cokro_official/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-background/40 hover:text-accent transition-colors duration-300"
+          >
+            <Instagram className="w-5 h-5" />
+          </a>
+          <a
+            href="https://www.facebook.com/COKRO.original/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-background/40 hover:text-accent transition-colors duration-300"
+          >
+            <Facebook className="w-5 h-5" />
+          </a>
+        </div>
       </div>
     </footer>
   );
